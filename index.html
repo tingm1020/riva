@@ -27,16 +27,68 @@
 
 <body>
 	<!-- 所有頁面共用的heaer段 start-->
-
+	<div class="header">
+		<div class="block">
+			<a href="javascript:;" class="box icon mShow">
+				<span></span>
+			</a>
+			<div class="box menu pcShow">
+				<a href="javascript:;" class="sub">Page</a>
+				<a href="javascript:;" class="sub">Page</a>
+				<a href="javascript:;" class="sub">Page</a>
+			</div>
+			<a href="javascript:;" class="box logo"></a>
+			<div class="box menuBtn">
+				<a href="javascript:;" class="hBtn">hBtn</a>
+				<a href="javascript:;" class="hBtn">hBtn</a>
+			</div>
+		</div>
+		<div class="menu mShow">
+			<div class="block">
+				<div class="box logo"></div>
+				<div class="box submenu">
+					<a href="javascript:;" class="sub">Page</a>
+					<a href="javascript:;" class="sub">Page</a>
+					<a href="javascript:;" class="sub">Page</a>
+				</div>
+				<div class="box">
+					<a href="javascript:;" class="hBtn">hBtn</a>
+					<a href="javascript:;" class="hBtn">hBtn</a>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- 所有頁面共用的heaer段 end-->
 
 	<!-- 本頁主要內容 start-->
 
 <div class="wrapper">
 	<div class="main">
-		<div class="kv">
-			<div class="block"></div>
+		<div class="kv swiper-container">
+			<div class="parallax-bg" data-swiper-parallax="-23%"></div>
+			<div class="block swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="title" data-swiper-parallax="-300">Slide 1</div>
+					<div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+					<div class="text" data-swiper-parallax="-100"></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="title" data-swiper-parallax="-300">Slide 2</div>
+					<div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+					<div class="text" data-swiper-parallax="-100"></div>
+				</div>
+				<div class="swiper-slide">
+					<div class="title" data-swiper-parallax="-300">Slide 3</div>
+					<div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+					<div class="text" data-swiper-parallax="-100"></div>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
 		</div>
+
 		<div class="page"></div>
 
 		<div class="popup">
@@ -110,7 +162,9 @@
 	<!-- 所有頁面共用的footer段 end-->
 
 	<!-- 所有頁面共用的js -->
+	<script src="js/plugin/swiper.min.js"></script>
 	<script src="js/plugin/jquery.js">/*jquery-1.7.2.min.js*/</script>
+	
 	<script type="text/javascript" src="js/common.js"></script>
 
 <!-- ======單獨這頁用的js end -->
