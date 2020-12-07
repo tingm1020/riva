@@ -9,8 +9,8 @@ $(document).ready(function(){
             clickable: true,
         },
         navigation: {
-            prevEl: '.swiper-button-next',
-            nextEl: '.swiper-button-prev',
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
         }
     });
     $('.header .block .icon').click(function(){ 
