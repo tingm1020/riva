@@ -182,11 +182,11 @@ body, html { height: 100%; }
 .header .block .box.menuBtn .hBtn:hover { background-position: 100% 0; -webkit-transition: all .4s ease-in-out; transition: all .4s ease-in-out; }
 @media screen and (max-width: 750px) { .header .block .box.mShow { display: inline-block; }
   .header .block .box.menu, .header .block .box.menuBtn { display: none; }
-  .header .block .box.icon { position: absolute; left: 0; width: 16%; height: 50px; background: #5f5f5f; -webkit-animation: switchMenuBg .5s; animation: switchMenuBg .5s; z-index: 9; }
-  .header .block .box.icon span { position: relative; margin: 0 auto; top: 23px; display: block; width: 30px; height: 4px; background: #fff; -webkit-animation: switchOpacity 2s; animation: switchOpacity 2s; }
-  .header .block .box.icon span:before, .header .block .box.icon span:after { content: ''; display: block; position: absolute; width: 30px; height: 4px; display: block; background: #fff; -webkit-transition: 0.5s ease; transition: 0.5s ease; }
-  .header .block .box.icon span:before { margin-top: -12px; }
-  .header .block .box.icon span:after { margin-top: 12px; }
+  .header .block .box.icon { position: absolute; left: 0; width: 56px; height: 50px; background: #5f5f5f; -webkit-animation: switchMenuBg .5s; animation: switchMenuBg .5s; z-index: 9; }
+  .header .block .box.icon span { position: relative; margin: 0 auto; top: 23px; display: block; width: 30px; height: 2px; background: #fff; -webkit-animation: switchOpacity 2s; animation: switchOpacity 2s; }
+  .header .block .box.icon span:before, .header .block .box.icon span:after { content: ''; display: block; position: absolute; width: 30px; height: 2px; display: block; background: #fff; -webkit-transition: 0.5s ease; transition: 0.5s ease; }
+  .header .block .box.icon span:before { margin-top: -8px; }
+  .header .block .box.icon span:after { margin-top: 8px; }
   .header .block .box.icon.on span:before, .header .block .box.icon.on span:after { margin-top: 0; }
   .header .menu { display: block; position: absolute; top: 0; left: 0; width: 80%; height: 100vh; background: #fff; z-index: 8; opacity: 0; visibility: hidden; box-shadow: 0 0 11px #cfcfcf; }
   .header .menu.on { opacity: 1; visibility: visible; -webkit-animation: switchLefttoRight 1s ease-out; animation: switchLefttoRight 1s ease-out; }
@@ -204,11 +204,13 @@ body, html { height: 100%; }
 .swiper-container { width: 100%; height: 100%; background: #000; }
 
 .swiper-slide { font-size: 18px; color: #444444; -moz-box-sizing: border-box; box-sizing: border-box; padding: 150px 90px; text-align: left; }
+.swiper-slide .title, .swiper-slide .subtitle, .swiper-slide .text { position: relative; }
 .swiper-slide .title { font-size: 48px; font-weight: bold; line-height: 1.5; }
 .swiper-slide .subtitle { font-size: 16px; line-height: 1; letter-spacing: 2px; }
 .swiper-slide .text { font-size: 24px; max-width: 400px; line-height: 1.3; }
 .swiper-slide .subtitle, .swiper-slide .text { margin-left: 3px; }
-.swiper-slide .kvBtn { position: relative; padding: 13px 25px; background: rgba(100, 100, 100, 0.4); border: 1px solid #f5f5f5; font-size: 18px; color: #fff; text-align: center; display: inline-block; margin: 20px 0; letter-spacing: 1px; }
+.swiper-slide .kvBtn { position: relative; padding: 13px 60px 13px 25px; border: 1px solid #ababab; font-size: 18px; color: #5f5f5f; text-align: center; display: inline-block; margin: 20px 3px; letter-spacing: 1px; background-image: url(../img/btn1.png); background-repeat: no-repeat; background-position: 91% 44%; -webkit-transition: all .3s; transition: all .3s; opacity: .5; }
+.swiper-slide .kvBtn:hover { opacity: 1; -webkit-transition: all .3s; transition: all .3s; background-position-x: 94%; }
 
 .parallax-bg { position: absolute; left: 0; top: 0; width: 130%; height: 100%; background: #e8e8e8; }
 
@@ -222,7 +224,8 @@ body, html { height: 100%; }
 
 .swiper-button-prev { background-image: url(../img/arrow-left.png); background-size: 100% auto; left: 2%; }
 
-@media screen and (max-width: 750px) { .swiper-slide { padding: 100px 10%; }
+@media screen and (max-width: 750px) { .swiper-slide { padding: 10% 5%; }
+  .swiper-slide .kvBtn { display: block; position: absolute; bottom: 0; left: 50%; -webkit-transform: translate(-50%); -ms-transform: translate(-50%); transform: translate(-50%); opacity: 1; }
   .swiper-button-prev, .swiper-button-next { display: none; } }
 /*=============================================
 =                     index                   =
@@ -230,11 +233,13 @@ body, html { height: 100%; }
 .main { width: 100%; margin: 0 auto; -webkit-transition: 0.3s; transition: 0.3s; height: 100%; -moz-box-sizing: border-box; box-sizing: border-box; }
 @media screen and (max-width: 750px) { .main { max-width: 750px; } }
 .main .kv { position: relative; background: #f5f5f5; background-size: cover; overflow: hidden; height: 500px; padding-top: 80px; }
-.main .kv .block { position: relative; width: 100%; height: 100%; margin: 0 auto; max-width: 1600px; }
+.main .kv .block { position: relative; width: 100%; height: 100%; margin: 0 auto; max-width: 1300px; }
+.main .kv mark { background: #ababab; color: #ababab; }
 .main .page { position: relative; width: 100%; margin: 0 auto; padding: 50px 0; max-width: 1100px; }
+.main .page mark { background: #ababab; color: #ababab; }
 .main .page1 .contBox { position: relative; padding: 50px 0; }
 .main .page1 .contBox .box { position: relative; display: inline-block; vertical-align: top; color: #5f5f5f; line-height: 1.5; }
-.main .page1 .contBox .box h2 { font-size: 36px; }
+.main .page1 .contBox .box h2 { font-size: 30px; }
 .main .page1 .contBox .box h5 { font-size: 18px; margin-top: -25px; font-weight: normal; }
 .main .page1 .contBox .box p { text-align: left; font-size: 14px; line-height: 1.5; }
 .main .page1 .contBox .box:nth-child(1) { width: auto; margin-top: -8%; text-align: left; }
@@ -245,10 +250,10 @@ body, html { height: 100%; }
 /*=============================================
 =                  keyframes                  =
 =============================================*/
-@-webkit-keyframes switchMenuBg { 0% { background: #ababab; width: 14%; }
-  100% { background: #5f5f5f; width: 16%; } }
-@keyframes switchMenuBg { 0% { background: #ababab; width: 14%; }
-  100% { background: #5f5f5f; width: 16%; } }
+@-webkit-keyframes switchMenuBg { 0% { background: #ababab; width: 60px; }
+  100% { background: #5f5f5f; width: 56px; } }
+@keyframes switchMenuBg { 0% { background: #ababab; width: 60px; }
+  100% { background: #5f5f5f; width: 56px; } }
 @-webkit-keyframes switchOpacity { 0% { opacity: 0; }
   100% { opacity: 1; } }
 @keyframes switchOpacity { 0% { opacity: 0; }
@@ -300,5 +305,10 @@ body, html { height: 100%; }
 /*=============================================
 =                     RWD                   =
 =============================================*/
+@media screen and (max-width: 910px) { .main .page1 .contBox { -webkit-transition: all .3s; transition: all .3s; width: 90%; margin: 0 auto; padding: 0; }
+  .main .page1 .contBox .box:nth-child(1), .main .page1 .contBox .box:nth-child(2) { width: 100%; margin: 0; } }
 @media screen and (max-width: 750px) { .pcShow { display: none; }
-  .mShow { display: block; } }
+  .mShow { display: block; }
+  .main .page1 .contBox .box p { font-size: 18px; -webkit-transition: all .3s; transition: all .3s; }
+  .main .page1 .contBox .box h2 { font-size: 36px; -webkit-transition: all .3s; transition: all .3s; }
+  .main .page1 .contBox .box h5 { font-size: 24px; margin-top: -35px; -webkit-transition: all .3s; transition: all .3s; } }
