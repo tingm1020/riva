@@ -8,6 +8,10 @@ $(document).ready(function(){
             el: '.swiper-pagination',
             clickable: true,
         },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
         navigation: {
             prevEl: '.swiper-button-prev',
             nextEl: '.swiper-button-next',
