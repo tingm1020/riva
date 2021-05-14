@@ -1,54 +1,46 @@
 ﻿@charset "utf-8";
-// @import "compass";
 @import "_reset.scss";
 @import "_base.scss";
-
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
-/*=============================================
-=                   plugin                    =
-=============================================*/
-// include swiper css in base.css
-@include swiper();
-/*=============================================
-=                  All setting               =
-=============================================*/
-$mainCssSeting: #4872ae;
-$testBg1: #e8e8e8;
-$testBg2: #ababab;
-$testBg3: #f5f5f5;
-$testBg4: #5f5f5f;
+
 /*=============================================
 =                    base                     =
 =============================================*/
 body{
-	font:normal 12px/18px Arial,'Noto Sans TC','Microsoft JhengHei','微軟正黑體';
-	color:$testBg4;
+	font:normal 12px/18px 'Noto Sans TC',sans-serif,Arial,'Microsoft JhengHei','微軟正黑體';
+	color:#fff;
 }
 input,select,textarea{
-	font:normal 12px/18px Arial,'Noto Sans TC','Microsoft JhengHei','微軟正黑體';
+	font:normal 12px/18px 'Noto Sans TC',sans-serif,Arial,'Microsoft JhengHei','微軟正黑體';
 	padding:0;
 	margin:0;
 	vertical-align:middle;}
-a{
-	color:$testBg4;
-	text-decoration:none;
-}
+a{color:#fff;text-decoration:none;}
 body,html{    
 	height: 100%;
 	
 }
+@include swiper();
+/*=============================================
+=                  All setting               =
+=============================================*/
+$C1:#E3D9D0;
+$C2:#87949C;
+$C3:#A1753D;
+$C4:#CECEC2;
+$C5:#4D443D;
 
 /*=============================================
 =                 Structural                  =
 =============================================*/
+
 .wrapper{
-	position: relative;
-	-webkit-overflow-scrolling: touch;width: 100%;
+	@include abs($w:100%,$h:100%);
+	-webkit-overflow-scrolling: touch;
 	display: block;
 	text-align: center;
 	background: #fff;
-	min-height: 750px;
 }
 .pcShow{
 	display: block;
@@ -56,295 +48,61 @@ body,html{
 .mShow{
 	display: none;
 }
+.clear{
+	clear: both;
+}
 /*=============================================
-=                    header                   =
+=                   header                   =
 =============================================*/
 .header{
-	@include fix($w:100%,$h:80px,$t:0,$l:0);
+	@include fix($w:100%,$h:60px,$t:0,$l:0);
+	background: $C5;
 	z-index: 9;
-	margin: 0 auto;
-	background: #fff;
-	box-shadow: 0 0 10px #bebebe;
-	&:before{
-		content: '';
-		@include abs($w:90%,$h:3px,$t:0,$l:50%);
-		background: $testBg2;
-		margin: 0 auto;
-		transform: translate(-50%);
-	}
+	transition: all .3s;
 	.block{
 		position: relative;
-		max-width: 1300px;
-		margin: 15px auto;
-		@include wh(90%,100%);
+		@include wh(100%,40px);
+		max-width: 1200px;
+		margin: 10px auto;
+		border: 1px solid #fff;
+		box-sizing: border-box;
 		.box{
+			position: relative;
+			float: left;
 			display: inline-block;
 			vertical-align: middle;
-			width: 35%;
-			height: 50px;
-			&.mShow{
-				display: none;
-			}
-			&.logo{
-				@include abs($w:150px,$h:50px,$l:50%);
-				background: $testBg1;
+			margin: 0 2%;
+		}
+		.logo{
+			@include wh(45px,36px);
+			background: url(../img/logo.png) 50% 50% no-repeat;
+		}
+		.navBar{
+			width: 40%;
+			float: right;
+			text-align: right;
+			.sub{
+				font-size: 16px;
+				color: $C4;
+				margin: 10px 5%;
 				display: inline-block;
-				transform: translate(-50%);
-			}
-			&.menu{
-				.sub{
-					position: relative;
-					margin: 15px;
-					font-size: 18px;
-					box-sizing: border-box;
-					display: inline-block;
-				}
-			}
-			&.menuBtn{
-				position: absolute;
-				right: 0;
-				text-align: right;
-				.hBtn{
-					position: relative;
-					padding: 7px 15px;
-					border-radius: 20px;
-					display: inline-block;
-					vertical-align: middle;
-					background: $testBg4;
-					font-size: 18px;
-					color: #fff;
-					margin: 9px 5px;
-					border: 1px solid $testBg4;
-					background-image: linear-gradient(to right, #29323c, #485563, #59522f, #103264);
-					transition: all .4s ease-in-out;
-					background-size: 300% 100%;
-					&:nth-child(1){
-						background: transparent;
-						color: $testBg4;
-					}
-					&:hover{
-						background-position: 100% 0;
-						transition: all .4s ease-in-out;
-					}
-				}
+				box-sizing: border-box;
 			}
 		}
 	}
-	@include rwd(max,750){
-		.block{
-			.box{
-				&.mShow{
-					display: inline-block;
-				}
-				&.menu,&.menuBtn{
-					display: none;
-				}
-				&.icon{
-					position: absolute;
-					left: 0;
-					@include wh(56px,50px);
-					background: $testBg4;
-					animation: switchMenuBg .5s;
-					z-index: 9;
-					span{
-						position: relative;
-						margin: 0 auto;
-						top: 23px;
-						display: block;
-						@include wh(30px,2px);
-						background: #fff;
-						animation: switchOpacity 2s;
-						&:before,&:after{
-							content: '';
-							@include abs($w:30px,$h:2px);
-							display: block;
-							background: #fff;
-							transition: 0.5s ease;
-						}
-						&:before{
-							margin-top: -8px;
-						}
-						&:after{
-							margin-top: 8px;
-						}
-					}
-					&.on{
-						span{
-							&:before,&:after {
-								margin-top: 0;
-							}
-						}
-					}
-				}
-			}
-			
-		}
-		.menu{
-			@include abs($w:80%,$h:100vh,$t:0,$l:0);
-			background: #fff;
-			z-index: 8;
-			opacity: 0;
-			visibility: hidden;
-			box-shadow: 0 0 11px #cfcfcf;
-			&.on{
-				opacity: 1;
-				visibility: visible;
-				animation: switchLefttoRight 1s ease-out;
-				.block{
-					@include wh(87.5%,70vh);
-					margin: 80px auto;
-					animation: switchOpacity 5s;
-					.box{
-						position: relative;
-						@include wh(100%,auto);
-						margin: 10px 0;
-						left: 0;
-						transform: translate(0%);
-						&.logo{
-							@include wh(100px,40px);
-						}
-						&.submenu{
-							margin-top: calc(40vh - 80px);
-							.sub{
-								position: relative;
-								width: 100%;
-								display: block;
-								font-size: 24px;
-								padding: 5px;
-								line-height: 1.5;
-							}
-						}
-						.hBtn{
-							position: relative;
-							width: 20%;
-							display: block;
-							padding: 7px 20px;
-							margin: 15px 0;
-							border-radius: 20px;
-							border: 1px solid $testBg2;
-							color: $testBg2;
-							font-size: 20px;
-							text-align: center;
-							&:nth-child(2){
-								background: $testBg2;
-								color: #fff;
-							}
-						}
-					}
-				}
-			}
-			
-		}
-	}
-}
-/*=============================================
-=                    swiper                   =
-=============================================*/
-.swiper-container {
-	width: 100%;
-	height: 100%;
-	background: #000;
-}
-.swiper-slide {
-	font-size: 18px;
-	color: #444444;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	padding: 150px 90px;
-	text-align: left;
-	.title,.subtitle,.text{
-		position: relative;
-	}
-	.title{
-		font-size: 48px;
-		font-weight: bold;
-		line-height: 1.5;
-	}
-	.subtitle{
-		font-size: 16px;
-		line-height: 1;
-		letter-spacing: 2px;
-	}
-	.text{
-		font-size: 24px;
-		max-width: 400px;
-		line-height: 1.3;
-	}
-	.subtitle,.text{
-		margin-left: 3px;
-	}
-	.kvBtn{
-		position: relative;
-		padding: 13px 60px 13px 25px;
-		border: 1px solid $testBg2;
-		font-size: 18px;
-		color: $testBg4;
-		text-align: center;
-		display: inline-block;
-		margin: 20px 3px;
-		letter-spacing: 1px;
-		background-image: url(../img/btn1.png);
-		background-repeat: no-repeat;
-		background-position: 91% 44%;
+	&.simplify{
+		height: 40px;
 		transition: all .3s;
-		opacity: .5;
-		&:hover{
-			opacity: 1;
-			transition: all .3s;
-			background-position-x: 94%;
+		.block{
+			.logo{
+				background-position: top center;
+				background-size: 60% auto;
+			}
 		}
-	}
-}
-.parallax-bg {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 130%;
-	height: 100%;
-	// background: url(../img/kv.png) 50% 50% no-repeat;
-	background:$testBg1;
-	// background-size: cover;
-}
-.swiper-pagination-bullet {
-	width: 40px;
-	height: 4px;
-	border-radius: 0;
-	background: $testBg4;
-	opacity: 0.4;
-}
-.swiper-pagination-bullet-active {
-	opacity: 1;
-}
-.swiper-button-prev,.swiper-button-next{
-	@include wh(21px,40px);
-	margin-top: 0;
-	display: block;
-}
-.swiper-button-next{
-	background-image: url(../img/arrow-right.png);
-	background-size: 100% auto;
-	right: 2%;
-}
-.swiper-button-prev {
-	background-image: url(../img/arrow-left.png);
-	background-size: 100% auto;
-	left: 2%;
-}
-@include rwd(max,750){
-	.swiper-slide{
-		padding: 10% 5%;
-		.kvBtn{
-			@include abs($b:0,$l:50%);
-			transform: translate(-50%);
-			opacity: 1;
-		}
-	}
-	.swiper-button-prev,.swiper-button-next {
-		display: none;
 	}
 }
 /*=============================================
-=                     index                   =
+=                   index                     =
 =============================================*/
 
 .main{
@@ -353,371 +111,59 @@ body,html{
 	transition: 0.3s;
 	height: 100%;
 	box-sizing: border-box;
-	@include rwd(max,750){
-		max-width: 750px;
+	.page{
+		position: relative;
+		@include wh(100%,100%);
+		margin: 0 auto;
 	}
 	.kv{
 		position: relative;
-		background: $testBg3;
-		background-size: cover;
-		overflow: hidden;
-		height: 500px;
-		padding-top: 80px;
-		.block{
-			position: relative;
-			@include wh(100%,100%);
-			margin: 0 auto;
-			max-width: 1300px;
+		@include wh(100%,100%);
+		// padding-top: 60px;
+		.kvSlide{
+			@include wh(100%,550px);
+			background: $C1;
 		}
-		mark {
-			background: $testBg2;
-			color: $testBg2;
+		.swiper-container-horizontal > .swiper-pagination{
+			bottom: 0;
+			width: 50%;
+			left: 80%;
+			top: 90%;
+			transform: translate(-50%,0)
 		}
-	}
-	.page{
-		position: relative;
-		width: 100%;
-		margin: 0 auto;
-		padding: 50px 0; 
-		max-width: 1100px;
-		.contBox{
-			position: relative;
-			@include wh(100%,auto);
-			box-sizing: border-box;
-			h2,h5{
-				line-height: 1.5;
-			}
-			h2{
-				font-size: 30px;
-			}
-			h3{
-				font-size: 26px;
-			}
-			h5{
-				font-size: 18px;
-				margin-top: -25px;
-				font-weight: normal;
-			}
-			.btn{
-				position: relative;
-				display: block;
-				margin: 40px auto 0;
-				padding: 11px 25px;
-				max-width: 200px;
-				border: 1px solid $testBg4;
-				line-height: 1.5;
-				font-size: 20px;
-				letter-spacing: 3px;
-			}
+		.swiper-pagination-bullet{
+			@include wh(10px,10px);
 		}
-		mark {
-			background: $testBg2;
-			color: $testBg2;
+		.swiper-pagination-bullet-active{
+			background: $C3;
 		}
-	}
-	.page1{
-		.contBox{
-			padding: 50px 0;
-			.box{
-				position: relative;
-				display: inline-block;
-				vertical-align: top;
-				color: $testBg4;
-				line-height: 1.5;
-				
-				p{
-					text-align: left;
-					font-size: 14px;
-					line-height: 1.5;
-					
-				}
-				&:nth-child(1){
-					width: auto;
-					margin-top: -8%;
-					text-align: left;
-				}
-				&:nth-child(2){
-					width: 55%;
-					margin-left: 3%;
-				}
-			}
+		.swiper-button-prev,.swiper-button-next{
+			@include wh(25px,58px);
+			top: 80%;
+			padding: 25px 10px;
+			margin-top: 0;
+			
 		}
-	}
-	.page2{
-		padding-top: 0px;
-		.contBox{
-			h2{
-				text-align: left;
-			}
-			.block{
-				position: relative;
-				padding: 10px 0;
-				.box{
-					position: relative;
-					float: left;
-					text-align: left;
-					width: 47%;
-					margin: 2% 1.5%;
-					.num,.txt,.img{
-						position: relative;
-						display: inline-block;
-						vertical-align: top;
-						margin: 0 1.5%;
-					}
-					.num{
-						position: relative;
-						margin-left: 0;
-						&:before{
-							content: '';
-							@include abs($w:4px,$h:30px,$t:13%,$l:-10px);
-							background: $testBg2;
-							transform: translate(-50%);
-						}
-						h4,p{
-							display: block;
-							line-height: 1;
-						}
-						h4{
-							font-size: 50px;
-							margin: 0;
-						}
-						p{
-							font-size: 16px;
-							letter-spacing: 1px;
-						}
-					}
-					.txt{
-						width: 60%;
-						b{
-							font-size: 20px;
-							line-height: 1.5;
-						}
-					}
-				}
-			}
+		.swiper-button-prev{
+			background: url(../img/arrow1.png) $C2 50% 50% no-repeat;
+			left: 0;
+			background-size: 40% auto;
 		}
-		
-	}
-	.page3{
-		.img{
-			max-width: 1200px;
-			margin: 0 auto;
-			img{
-				width: 100%;
-			}
-		}
-		.title{
-			@include abs($w:100%,$h:auto,$t:50%,$l:50%);
-			transform: translate(-50%,-50%);
-			padding: 11px 25px;
-			max-width: 200px;
-			font-size: 20px;
-			color: $testBg4;
-			line-height: 1.5;
-			max-width: 300px;
-			letter-spacing: 3px;
-			&:before,&:after{
-				content: '';
-				@include abs($w:4px,$h:30px,$t:50%);
-				background: $testBg2;
-				transform: translate(0,-50%);
-			}
-			&:before{
-				left: 3px;
-			}
-			&:after{
-				right: 3px;
-			}
-		}
-	}
-	.page4{
-		.contBox{
-			max-width: 1100px;
-			width: 100%;
-			margin: 0 auto;
-			.box{
-				position: relative;
-				float: left;
-				@include wh(30%,auto);
-				margin: 0 1.5%;
-				.icon{
-					position: relative;
-					@include wh(80px,80px);
-					border-radius: 80px;
-					border: 1px solid $testBg4;
-					text-align: left;
-					p{
-						@include abs($t:50%,$l:50%);
-						font-size: 36px;
-						line-height: 1.5;
-						transform: translate(-50%,-50%);
-					}
-				}
-				.txt{
-					position: relative;
-					line-height: 1.3;
-					text-align: left;
-					padding: 0 15px;
-					h4{
-						font-size: 24px;
-						&:after{
-							content: '';
-							@include abs($w:30%,$h:4px,$l:15px,$t:24%);
-							background: $testBg4;
-						}
-					}
-					p{
-						font-size: 16px;
-					}
-				}
-			}
+		.swiper-button-next{
+			background: url(../img/arrow2.png) $C2 50% 50% no-repeat;
+			right: 0;
+			background-size: 40% auto;
 		}
 	}
 }
-
 
 .clear{
 	clear: both;
 }
 /*=============================================
-=                  keyframes                  =
-=============================================*/
-@keyframes switchMenuBg{
-	0%{
-		background:$testBg2;
-		width: 60px;
-	}
-	100%{
-		background: $testBg4;
-		width: 56px;
-	}
-}
-@keyframes switchOpacity{
-	0%{
-		opacity: 0;
-	}
-	100%{
-		opacity: 1;
-	}
-}
-@keyframes switchLefttoRight{
-	0%{
-		left: -350px;
-	}
-	100%{
-		left: 0;
-	}
-}
-/*=============================================
 =                    footer                  =
 =============================================*/
-.footer {
-	position: relative;
-	@include wh(100%, auto);
-	background:$testBg1;
-	.block {
-		position: relative;
-		max-width: 1300px;
-		margin: 0 auto;
-		width: 90%;
-		padding: 40px 0 0;
-		.box {
-			position: relative;
-			float: left;
-			@include wh(15%,auto);
-			margin: 0 1.5% 2% 1.5%;
-			&[data-ft="2"]{
-				border-left: 1px solid $testBg2;
-				padding-left: 3%;
-			}
-			.logo{
-				@include wh(100px,30px);
-				background: $testBg3;
-				display: block;
-			}
-			.title{
-				font-size: 20px;
-				color: #444444;
-				font-weight: bold;
-				line-height: 2;
-				display: block;
-			}
-			p,.sub{
-				font-size: 16px;
-				color: #444444;
-				line-height: 1.5;
-				padding: 5px 0;
-				display: block;
-			}
-			.cont{
-				display: block;
-			}
-		}
-		.copyright {
-			position: relative;
-			border-top: 1px solid $testBg2;
-			background: $testBg1;
-			@include wh(97%,45px);
-			margin: 0 auto;
-			.sub{
-				position: absolute;
-				font-size: 16px;
-				color: #444444;
-				line-height: 1.5;
-				padding: 10px 0;
-				display: inline-block;
-				&:nth-child(1){
-					left: 0;
-				}
-				&:nth-child(2){
-					right: 0;
-				}
-			}
-		}
-		@include rwd(max,750){
-			max-width: 600px;
-			width: 90%;
-			.box{
-				margin: 0 2%;
-				width: 45%;
-				float: none;
-				display: inline-block;
-				vertical-align: top;
-				&[data-ft="1"]{
-					width: 100%;
-				}
-				&[data-ft="2"]{
-					padding-left: 0;
-					border-left: none;
-				}
-				.title{
-					&:before{
-						content: '';
-						@include abs($w:40px,$h:21px,$r:0,$t:10px);
-						background: url(../img/arrow.png) 50% 50% no-repeat;
-						background-size: 50% auto;
-					}
-					&.on{
-						&:before{
-							transition: all .3s;
-							transform: rotate(180deg);
-						}
-						
-					}
-				}
-				.cont{
-					display: none;
-					&.on{
-						display: block;
-					}
-				}
-			}
-			.copyright{
-				margin: 40px auto 0;
-			}
-		}
-	}
-}
+
 /*=============================================
 =                    popup                   =
 =============================================*/
@@ -728,11 +174,12 @@ body,html{
 	opacity: 0;
 	visibility: hidden;
 	overflow: auto;
-	transition: z-index 1s,visibility 0.5s,opacity 1s;
+	transition: z-index 0s,visibility 0s,opacity 0s;
 	&.on{
 		opacity: 1;
 		visibility: visible;
-		z-index: 200;
+		z-index: 9;
+		transition: z-index 0s,visibility 0.5s,opacity 1s;
 	}
 	.popWrap{
 		position: relative;
@@ -741,7 +188,7 @@ body,html{
 		text-align: center;
 		box-sizing: border-box;
 		overflow: hidden;
-		background: rgba(0,0,0,0.7);
+		background: rgba(255, 183, 27, .5);
 		&:before{
 			content: '';
 			@include wh(0,100%);
@@ -755,13 +202,16 @@ body,html{
 		vertical-align: middle;
 		z-index: 2;
 		.xBtn{
-			@include abs($w:30px,$h:30px,$t:-30px,$r:-25px);
+			@include abs($w:30px,$h:30px,$t:-11px,$r:-11px);
 			display: block;
+			background: $C1;
+			z-index: 2;
+			border-radius: 30px;
 			&:before,&:after{
 				content: '';
-				@include abs($w:3px,$h:15px);
+				@include abs($w:3px,$h:18px,$t:6px,$l:14px);
 				background: #fff;
-				display: block;
+				display: inline-block;
 			}
 			&:before{
 				transform: rotate(45deg);
@@ -773,108 +223,25 @@ body,html{
 	}
 	.contBox{
 		position: relative;
-		@include wh(600px,200px);
+		@include wh(400px,auto);
 		background: #fff;
+		border-radius: 13px;
+		border: 5px solid $C5;
 		display: none;
 		transition: all .3s;
-		&.on{
-			display: block;
-		}
+		padding: 20px;
+		box-sizing: border-box;
+
 	}
 }
 /*=============================================
 =                     RWD                   =
 =============================================*/
-@include rwd(max,1100){
-	.main{
-		.page{
-			width: 90%;
-		}
-		.page1{
-			text-align: left;
-		}
-		.page2{
-			.contBox{
-				.block{
-					width: 85%;
-					margin: 0 auto;
-					.box{
-						width: 100%;
-						margin: 2% auto;
-						
-					}
-				}
-			}
-			
-		}
-	}
-}
-@include rwd(max,910){
-	.main {
-		.page1 {
-			.contBox {
-				transition: all .3s;
-				width: 100%;
-				margin: 0 auto;
-				padding: 0;
-				.box{
-					
-					&:nth-child(1),&:nth-child(2){
-						width: 100%;
-						margin: 0;
-					}
-				}
-			}
-		}
-	}
-}
-@include rwd(max,750){
+@include rwd(max,768){
 	.pcShow{
 		display: none;
 	}
 	.mShow{
 		display: block;
-	}
-	.main{
-		.page1{
-			.contBox{
-				.box{
-					p{
-						font-size: 18px;
-						transition: all .3s;
-					}
-					h2{
-						font-size: 36px;
-						transition: all .3s;
-					}
-					h5{
-						font-size: 24px;
-						margin-top: -35px;
-						transition: all .3s;
-					}
-				}
-			}
-		}
-		.page2{
-			.contBox{
-				.block{
-					.box{
-						.num{
-							margin-left: 0;
-							width: 20%;
-						}
-						.txt{
-							width: 75.5%;
-							text-align: right;
-							margin: 0 0 0 2%;
-						}
-						.img{
-							margin: 4% 0;
-						}
-
-					}
-				}
-			}
-		}
 	}
 }
