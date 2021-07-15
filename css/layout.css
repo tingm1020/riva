@@ -2722,8 +2722,9 @@ button.swiper-pagination-bullet {
     margin: 40px auto;
   }
   .main .work1 .img {
-    width: 60%;
-    margin: 0 20%;
+    width: 85%;
+    margin: 0 auto;
+    float: none;
   }
   .main .work1 .num {
     display: none;
@@ -2747,6 +2748,7 @@ button.swiper-pagination-bullet {
   .main .work3 .qa .cont {
     line-height: 1.5;
     font-size: 16px;
+    padding: 10px 0;
   }
   .main .work4 .dec {
     font-size: 16px;
@@ -2774,18 +2776,18 @@ button.swiper-pagination-bullet {
   .main .work4 .contBox .mDec h4 {
     font-size: 18px;
     color: #4D443D;
-    margin: 20px auto 10px;
+    margin: 20px 10px 20px;
   }
   .main .work4 .contBox .mDec ul {
     position: relative;
-    margin: 10px 50px 20px;
+    margin: 10px 20px 20px 50px;
     list-style: disc;
     -webkit-transition: all .5s;
     transition: all .5s;
   }
   .main .work4 .contBox .mDec ul li {
     color: #4D443D;
-    font-size: 12px;
+    font-size: 16px;
     text-align: left;
     line-height: 1.5;
   }
