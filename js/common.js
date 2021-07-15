@@ -1,5 +1,29 @@
-if (/Line/.test(navigator.userAgent)) {
-    location.href = location.href + '?openExternalBrowser=1';
+if (navigator.userAgent.indexOf("Line") > -1) {
+    if (location.href.indexOf('?') > 0) {
+
+        if (window.location.hash.slice(1)) {
+            var url = location.href.split(window.location.hash.slice(0));
+
+            location.href = url[0] + '&openExternalBrowser=1#' + window.location.hash.slice(1);
+
+
+        } else {
+            location.href = location.href = location.href + '&openExternalBrowser=1';
+
+        }
+    } else {
+
+        if (window.location.hash.slice(1)) {
+            var url = location.href.split(window.location.hash.slice(0));
+
+            location.href = url[0] + '?openExternalBrowser=1#' + window.location.hash.slice(1);
+
+
+        } else {
+            location.href = location.href = location.href + '?openExternalBrowser=1';
+
+        }
+    }
 }
 $(document).ready(function(){
 
