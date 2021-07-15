@@ -2722,8 +2722,8 @@ button.swiper-pagination-bullet {
     margin: 40px auto;
   }
   .main .work1 .img {
-    width: 85%;
-    margin: 0 auto;
+    width: 60%;
+    margin: 0 20%;
     float: none;
   }
   .main .work1 .num {
@@ -2844,6 +2844,10 @@ button.swiper-pagination-bullet {
   }
   .main .copyright {
     padding: 20px 0;
+  }
+  .project05 .work1 .img {
+    width: 90%;
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=layout.css.map */
